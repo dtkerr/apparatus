@@ -1,0 +1,5 @@
+_pillar
+**/__pycache__
+_terraform/workspace/*
+.salt-root
+.salt-ssh.log

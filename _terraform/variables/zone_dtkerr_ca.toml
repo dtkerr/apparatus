@@ -1,0 +1,104 @@
+name = "dtkerr.ca."
+
+[[records]]
+type = "A"
+host = "@"
+value = "134.122.41.78"
+ttl = 14400
+[[records]]
+type = "AAAA"
+host = "@"
+value = "2604:a880:cad:d0::cf6:d001"
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "www.dtkerr.ca."
+value = "dtkerr.ca."
+ttl = 14400
+
+#######
+## misc
+[[records]]
+type = "CAA"
+host = "@"
+value = "letsencrypt.org."
+flags = 0
+tag = "issue"
+ttl = 14400
+
+##############
+## email setup
+
+# MX
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx1.migadu.com."
+priority = 10
+ttl = 14400
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx2.migadu.com."
+priority = 20
+ttl = 14400
+
+# TXT
+[[records]]
+type = "TXT"
+host = "@"
+value = "hosted-email-verify=cpzsgwok"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "@"
+value = "v=spf1 include:spf.migadu.com -all"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "_dmarc.dtkerr.ca."
+value = "v=DMARC1; p=reject;"
+ttl = 3600
+
+# CNAME
+[[records]]
+type = "CNAME"
+host = "key1._domainkey.dtkerr.ca."
+value = "key1.dtkerr.ca._domainkey.migadu.com."
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "key2._domainkey.dtkerr.ca."
+value = "key2.dtkerr.ca._domainkey.migadu.com."
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "key3._domainkey.dtkerr.ca."
+value = "key3.dtkerr.ca._domainkey.migadu.com."
+ttl = 14400
+
+# SRV
+[[records]]
+type = "SRV"
+host = "_submissions._tcp.dtkerr.ca."
+value = "smtp.migadu.com."
+port = 465
+priority = 0
+weight = 1
+ttl = 43200
+[[records]]
+type = "SRV"
+host = "_imaps._tcp.dtkerr.ca."
+value = "imap.migadu.com."
+port = 993
+priority = 0
+weight = 1
+ttl = 43200
+[[records]]
+type = "SRV"
+host = "_pop3s._tcp.dtkerr.ca."
+value = "pop.migadu.com."
+port = 995
+priority = 0
+weight = 1
+ttl = 43200

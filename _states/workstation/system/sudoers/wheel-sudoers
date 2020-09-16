@@ -1,0 +1,2 @@
+# I like to live dangerously
+%wheel ALL=(ALL) NOPASSWD: ALL

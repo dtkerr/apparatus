@@ -1,0 +1,91 @@
+name = "oefd.ca."
+
+#############
+## ip records
+
+# oefd.ca.
+[[records]]
+type = "A"
+host = "@"
+value = "165.227.42.195"
+ttl = 3600
+[[records]]
+type = "AAAA"
+host = "@"
+value = "2604:a880:cad:d0::6b:b001"
+ttl = 3600
+
+# dav.oefd.ca.
+[[records]]
+type = "A"
+host = "dav.oefd.ca."
+value = "165.227.42.195"
+ttl = 3600
+[[records]]
+type = "AAAA"
+host = "dav.oefd.ca."
+value = "2604:a880:cad:d0::6b:b001"
+ttl = 3600
+
+########
+## cname
+
+[[records]]
+type = "CNAME"
+host = "www.oefd.ca."
+value = "oefd.ca."
+ttl = 43200
+[[records]]
+type = "CNAME"
+host = "shop.oefd.ca."
+value = "shops.myshopify.com."
+ttl = 43200
+
+#######
+## misc
+[[records]]
+type = "CAA"
+host = "@"
+value = "letsencrypt.org."
+flags = 0
+tag = "issue"
+ttl = 14400
+
+##############
+## email setup
+
+# MX
+[[records]]
+type = "MX"
+host = "@"
+value = "mail.protonmail.ch."
+priority = 10
+ttl = 14400
+[[records]]
+type = "MX"
+host = "@"
+value = "mailsec.protonmail.ch."
+priority = 20
+ttl = 14400
+
+# TXT
+[[records]]
+type = "TXT"
+host = "@"
+value = "protonmail-verification=7fa3d2897573c83c9964429f4eb4dad7442b2fd1"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "@"
+value = "v=spf1 include:_spf.protonmail.ch mx ~all"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "_dmarc.oefd.ca."
+value = "v=DMARC1; p=quarantine; rua=mailto:postmaster@oefd.ca"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "protonmail._domainkey.oefd.ca."
+value = "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCumT0+JwYWHKkdi2pbeRKJsOAEezopwFL0/DFhvHy8kNZFxPiFnA2ZQsINPuiPLLZY8EL2dIdzO2a30Eaip4IT10/P0m9CEQ4INpnx0BC8WTmHJx5fHf7m3GWx9mZyO9Tw+yvhquROF2QXDdgD5bXm0qet4vYmEfSnrppzwdiIQwIDAQAB"
+ttl = 3600

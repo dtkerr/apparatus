@@ -1,0 +1,136 @@
+name = "oefd.net."
+
+#########
+## cnames
+
+[[records]]
+type = "CNAME"
+host = "www.oefd.net."
+value = "oefd.net."
+ttl = 14400
+
+#############
+## ip records
+
+# oefd.net.
+[[records]]
+type = "A"
+host = "@"
+value = "134.122.41.78"
+ttl = 3600
+[[records]]
+type = "AAAA"
+host = "@"
+value = "2604:a880:cad:d0::cf6:d001"
+ttl = 3600
+
+# kiwi.oefd.net.
+[[records]]
+type = "A"
+host = "kiwi.oefd.net."
+value = "165.227.42.195"
+ttl = 3600
+[[records]]
+type = "AAAA"
+host = "kiwi.oefd.net."
+value = "2604:a880:cad:d0::6b:b001"
+ttl = 3600
+
+# beagle.oefd.net.
+[[records]]
+type = "A"
+host = "beagle.oefd.net."
+value = "134.122.41.78"
+ttl = 3600
+[[records]]
+type = "AAAA"
+host = "beagle.oefd.net."
+value = "2604:a880:cad:d0::cf6:d001"
+ttl = 3600
+
+#######
+## misc
+[[records]]
+type = "CAA"
+host = "@"
+value = "letsencrypt.org."
+flags = 0
+tag = "issue"
+ttl = 14400
+
+##############
+## email setup
+
+# MX
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx1.migadu.com."
+priority = 10
+ttl = 14400
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx2.migadu.com."
+priority = 20
+ttl = 14400
+
+# TXT
+[[records]]
+type = "TXT"
+host = "@"
+value = "hosted-email-verify=ljtp9k6p"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "@"
+value = "v=spf1 include:spf.migadu.com -all"
+ttl = 3600
+[[records]]
+type = "TXT"
+host = "_dmarc.oefd.net."
+value = "v=DMARC1; p=reject;"
+ttl = 3600
+
+# CNAME
+[[records]]
+type = "CNAME"
+host = "key1._domainkey.oefd.net."
+value = "key1.oefd.net._domainkey.migadu.com."
+ttl = 43200
+[[records]]
+type = "CNAME"
+host = "key2._domainkey.oefd.net."
+value = "key2.oefd.net._domainkey.migadu.com."
+ttl = 43200
+[[records]]
+type = "CNAME"
+host = "key3._domainkey.oefd.net."
+value = "key3.oefd.net._domainkey.migadu.com."
+ttl = 43200
+
+# SRV
+[[records]]
+type = "SRV"
+host = "_submissions._tcp.oefd.net."
+value = "smtp.migadu.com."
+port = 465
+priority = 0
+weight = 1
+ttl = 43200
+[[records]]
+type = "SRV"
+host = "_imaps._tcp.oefd.net."
+value = "imap.migadu.com."
+port = 993
+priority = 0
+weight = 1
+ttl = 43200
+[[records]]
+type = "SRV"
+host = "_pop3s._tcp.oefd.net."
+value = "pop.migadu.com."
+port = 995
+priority = 0
+weight = 1
+ttl = 43200

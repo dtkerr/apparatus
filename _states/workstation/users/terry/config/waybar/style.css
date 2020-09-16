@@ -1,0 +1,31 @@
+* {
+    color: #000;
+    border: none;
+    border-radius: 0;
+    font-family: "IBM Plex Sans";
+    font-size: 16px; }
+
+#clock, #battery, #pulseaudio, #mode {
+    margin: 0 0.75em; }
+
+#workspaces button {
+    color: #fff;
+    padding: 0 7px; }
+#workspaces button.focused {
+    font-weight: bold;
+    border-top: 2px solid #000;
+    color: #000; }
+#workspaces button.urgent {
+    font-weight: bold;
+    color: #ed6a43; }
+
+#battery {
+    margin-top: 0.125em; }
+
+#clock {
+    font-weight: bold; }
+
+#mode {
+    padding: 0 8px;
+    color: #fff;
+    background: #333; }

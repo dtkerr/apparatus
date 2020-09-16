@@ -1,0 +1,10 @@
+[user]
+	name = Terry Kerr
+	email = terry@oefd.ca
+	signingkey = terry@oefd.ca
+
+[core]
+	editor = /usr/bin/nvim
+
+[commit]
+	gpgsign = true

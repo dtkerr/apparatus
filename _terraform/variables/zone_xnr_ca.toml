@@ -1,0 +1,78 @@
+name = "xnr.ca."
+
+[[records]]
+type = "A"
+host = "@"
+value = "134.122.41.78"
+ttl = 14400
+[[records]]
+type = "AAAA"
+host = "@"
+value = "2604:a880:cad:d0::cf6:d001"
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "www.xnr.ca."
+value = "xnr.ca."
+ttl = 14400
+
+#######
+## misc
+[[records]]
+type = "CAA"
+host = "@"
+value = "letsencrypt.org."
+flags = 0
+tag = "issue"
+ttl = 14400
+
+##############
+## email setup
+
+# MX
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx1.migadu.com."
+priority = 10
+ttl = 14400
+[[records]]
+type = "MX"
+host = "@"
+value = "aspmx2.migadu.com."
+priority = 20
+ttl = 14400
+
+# TXT
+[[records]]
+type = "TXT"
+host = "@"
+value = "hosted-email-verify=pymre0oe"
+ttl = 14400
+[[records]]
+type = "TXT"
+host = "@"
+value = "v=spf1 include:spf.migadu.com -all"
+ttl = 14400
+[[records]]
+type = "TXT"
+host = "_dmarc.xnr.ca."
+value = "v=DMARC1; p=reject;"
+ttl = 14400
+
+#  CNAME
+[[records]]
+type = "CNAME"
+host = "key1._domainkey.xnr.ca."
+value = "key1.xnr.ca._domainkey.migadu.com."
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "key2._domainkey.xnr.ca."
+value = "key2.xnr.ca._domainkey.migadu.com."
+ttl = 14400
+[[records]]
+type = "CNAME"
+host = "key3._domainkey.xnr.ca."
+value = "key3.xnr.ca._domainkey.migadu.com."
+ttl = 14400

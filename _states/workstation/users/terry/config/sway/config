@@ -1,0 +1,83 @@
+## i/o setup
+output eDP-1 scale 2
+output "*" background /home/terry/.local/wallpaper fill
+
+## key aliases
+set $mod Mod4
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+exec ibus-daemon -drx --panel /usr/lib/ibus/ibus-wayland
+
+## key bindings
+# system commands
+bindsym $mod+Shift+q          kill
+bindsym $mod+Shift+c          reload
+bindsym $mod+Shift+e          exit
+# move focus
+bindsym $mod+$left            focus left
+bindsym $mod+$down            focus down
+bindsym $mod+$up              focus up
+bindsym $mod+$right           focus right
+# move windows
+bindsym $mod+Shift+$left      move left
+bindsym $mod+Shift+$down      move down
+bindsym $mod+Shift+$up        move up
+bindsym $mod+Shift+$right     move right
+# programs
+bindsym $mod+Return           exec alacritty
+bindsym $mod+d                exec rofi -show drun
+bindsym $mod+Shift+s          exec /usr/bin/swaylock -i /home/terry/.local/wallpaper
+
+## workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 0
+
+## layout
+bindsym $mod+s           layout stacking
+bindsym $mod+w           layout tabbed
+bindsym $mod+e           layout toggle split
+bindsym $mod+f           fullscreen 
+bindsym $mod+Shift+space floating toggle 
+bindsym $mod+space       focus mode_toggle 
+bindsym $mod+a           focus parent 
+bindsym $mod+ctrl+$left  splith
+bindsym $mod+ctrl+$down  splitv
+bindsym $mod+ctrl+$up    splitv
+bindsym $mod+ctrl+$right splith
+
+## resize mode
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym Return mode "default"
+    bindsym $left  resize shrink width  10 px or 10 ppt
+    bindsym $down  resize grow   height 10 px or 10 ppt
+    bindsym $up    resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow   width  10 px or 10 ppt
+}
+
+## aesthetics
+font pango:IBM Plex 10
+default_border pixel 4
+gaps inner 8
+gaps outer 0
+#                       border       bg           text        indicator    child_border
+client.focused          #6f8fb4      #6f8fb4      #2d3241     #6f8fb4      #6f8fb4
+client.focused_inactive #2d3241      #dfe3ec      #b04b57     #2d3241      #2d3241
+client.unfocused        #2d3241      #dfe3ec      #2d3241     #2d3241      #2d3241
+client.urgent           #b04b57      #b04b57      #b04b57     #2d3241      #b04b57
+
+## status bar
+bar {
+    swaybar_command waybar
+}
