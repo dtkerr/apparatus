@@ -20,6 +20,7 @@ if dein#load_state('~/.cache/dein')
   " syntax
   call dein#add('cespare/vim-toml')
   call dein#add('hashivim/vim-hashicorp-tools')
+  call dein#add('ziglang/zig.vim')
 
   " completion
   call dein#add('neoclide/coc.nvim', {

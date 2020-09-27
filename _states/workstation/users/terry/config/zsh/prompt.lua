@@ -15,6 +15,8 @@ nix_glyph = '⭞'
 nix_color = '%F{green}'
 kube_glyph = '🖧 '
 kube_color = '%F{magenta}'
+ruby_glyph = ' '
+ruby_color = '%F{red}'
 sigil_glyph = '» %f'
 sigil_ok_color = '%F{white}'
 sigil_fail_color = '%F{red}'
@@ -72,10 +74,15 @@ end
 -- indicate what kubernetes context is implict, if any
 function kube_block ()
     local kube_raw = os.getenv('KUBE_CONTEXT')
-    if not kube_raw then return '' end
-    local _, _, kube_right = kube_raw:partition('[')
-    local kube, _, _ = kube_right:rpartition(']')
-    return kube_color .. kube_glyph .. kube
+    if not kube_raw or kube_raw == '' then return '' end
+    return kube_color .. kube_glyph .. kube_raw:shorten(32)
+end
+
+-- indicate what ruby version is implict, if any
+function ruby_block ()
+    local ruby_ver = os.getenv('RUBY_VERSION')
+    if not ruby_ver or ruby_ver == '' then return '' end
+    return ruby_color .. ruby_glyph .. ruby_ver
 end
 
 -- sigil to give success/fail feedback from the last command
@@ -96,6 +103,7 @@ blocks = List {
     venv_block(),
     nix_block(),
     kube_block(),
+    ruby_block(),
 	sigil_block(),
 }
 function not_empty (val) return val ~= '' end

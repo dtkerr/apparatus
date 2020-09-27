@@ -6,8 +6,19 @@ zle -N history-beginning-search-forward-end history-search-end
 
 # prompt
 setopt PROMPT_SUBST
+kube_context () {
+    local context
+    context=$(kubectl config current-context 2>/dev/null)
+    if [[ $? == 0 ]]; then
+        context="${context}"
+    else
+        context=""
+    fi
+    echo "$context"
+}
 function precmd {
 	export LAST_STATUS="$?"
+    export KUBE_CONTEXT="$(kube_context)"
     if branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"; then 
         export GIT_BRANCH="$branch"
     else
