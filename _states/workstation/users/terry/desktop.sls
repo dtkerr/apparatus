@@ -16,7 +16,8 @@ desktop:
 
       # applications
       - alacritty
-      - firefox-developer-edition
+      # - firefox-developer-edition
+      #   I'm actually using the fedora wayland patch
       # - aerc # this is an aur package for now
       - dante
       - w3m
@@ -31,7 +32,7 @@ desktop:
       - ttf-fira-sans
       - ttf-ibm-plex
       - ttf-liberation
-      - ttf-nerd-fonts-symbols
+      - ttf-nerd-fonts-symbols-mono
       - ttf-roboto
 
 users.terry.desktop.top_level_dotfiles:

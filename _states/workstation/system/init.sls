@@ -4,5 +4,5 @@ include:
   - {{ slspath }}/sudoers
   - {{ slspath }}/bluetooth
   - {{ slspath }}/pulseaudio
-  - {{ slspath }}/zsh
   - {{ slspath }}/xdg
+  - {{ slspath }}/zsh

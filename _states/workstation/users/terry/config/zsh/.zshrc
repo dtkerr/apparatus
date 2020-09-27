@@ -41,6 +41,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GDK_BACKEND=wayland
 export MOZ_ENABLE_WAYLAND=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export XDG_CURRENT_DESKTOP=sway
 
 # ssh agent
 export GPG_TTY=$(tty)

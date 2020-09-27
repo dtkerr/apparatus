@@ -1,5 +1,6 @@
 ## i/o setup
 output eDP-1 scale 2
+output DP-2 pos 3840 0 res 3840x2160 scale 1.5
 output "*" background /home/terry/.local/wallpaper fill
 
 ## key aliases

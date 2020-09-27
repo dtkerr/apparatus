@@ -38,8 +38,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", ""],
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
     },
     "clock": {
         "format-alt": "{:%Y-%m-%d}"

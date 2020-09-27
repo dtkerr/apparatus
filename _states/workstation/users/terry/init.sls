@@ -10,6 +10,12 @@ users.terry.account:
       - lua-penlight
       - nodejs
       - npm
+      - pipewire
+      - pipewire-pulse
+      - xdg-desktop-portal
+      - xdg-desktop-portal-wlr
+      - libnotify
+      - mako
   user.present:
     - name: terry
     - fullname: Terry Kerr

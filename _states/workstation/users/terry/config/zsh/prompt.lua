@@ -7,13 +7,11 @@ stringx.import()
 ---------
 -- styles
 pwd_color = '%F{white}'
-venv_glyph = '⳻'
+venv_glyph = ''
 venv_color = '%F{blue}'
-branch_glyph = '⑆'
+branch_glyph = ''
 branch_color = '%F{cyan}'
-nix_glyph = '⭞'
-nix_color = '%F{green}'
-kube_glyph = '🖧 '
+kube_glyph = ''
 kube_color = '%F{magenta}'
 ruby_glyph = ' '
 ruby_color = '%F{red}'
@@ -64,13 +62,6 @@ function venv_block ()
     return venv_color .. venv_glyph .. venv_name
 end
 
--- indicate if the user is in a nix shell
-function nix_block ()
-    local nix = os.getenv('IN_NIX_SHELL')
-    if not nix then return '' end
-    return nix_color .. nix_glyph .. "nix"
-end
-
 -- indicate what kubernetes context is implict, if any
 function kube_block ()
     local kube_raw = os.getenv('KUBE_CONTEXT')
@@ -101,7 +92,6 @@ blocks = List {
     pwd_block(3),
     branch_block(),
     venv_block(),
-    nix_block(),
     kube_block(),
     ruby_block(),
 	sigil_block(),
