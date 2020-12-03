@@ -4,7 +4,7 @@ Resources managed by [terraform](https://www.terraform.io/). Since the HCL forma
 
 # security
 
-I'm basically publishing zone files for my DNS here... fortunately I don't have any very juicy bits of info here, but even still: probably not the best secrity practice in the world.
+I'm basically publishing zone files for my DNS here... fortunately I don't have any very juicy bits of info here, but even still: probably not the best security practice in the world.
 
 # templating
 

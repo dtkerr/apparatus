@@ -1,7 +1,7 @@
 [user]
 	name = Terry Kerr
-	email = terry@oefd.ca
-	signingkey = terry@oefd.ca
+	email = terry@oefd.net
+	signingkey = terry@oefd.net
 
 [core]
 	editor = /usr/bin/nvim

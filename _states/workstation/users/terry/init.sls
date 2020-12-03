@@ -11,7 +11,6 @@ users.terry.account:
       - nodejs
       - npm
       - pipewire
-      - pipewire-pulse
       - xdg-desktop-portal
       - xdg-desktop-portal-wlr
       - libnotify
